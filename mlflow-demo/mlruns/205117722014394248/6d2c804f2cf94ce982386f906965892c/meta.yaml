@@ -1,0 +1,14 @@
+artifact_uri: file:///Users/pranesh/Devloper/Cloud%20Product/cloudinsight/mlflow-demo/mlruns/205117722014394248/6d2c804f2cf94ce982386f906965892c/artifacts
+end_time: 1773140979449
+entry_point_name: ''
+experiment_id: '205117722014394248'
+lifecycle_stage: active
+run_id: 6d2c804f2cf94ce982386f906965892c
+run_name: powerful-fox-861
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1773140977938
+status: 3
+tags: []
+user_id: pranesh

@@ -1,0 +1,14 @@
+artifact_uri: file:///Users/pranesh/Devloper/Cloud%20Product/cloudinsight/mlflow-demo/mlruns/205117722014394248/0fdb31497e524f3b85d745adb890ab6b/artifacts
+end_time: 1773140012312
+entry_point_name: ''
+experiment_id: '205117722014394248'
+lifecycle_stage: active
+run_id: 0fdb31497e524f3b85d745adb890ab6b
+run_name: gentle-crab-378
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1773140010932
+status: 3
+tags: []
+user_id: pranesh

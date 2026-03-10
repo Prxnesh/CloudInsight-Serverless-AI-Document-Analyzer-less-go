@@ -1,0 +1,10 @@
+artifact_location: file:///Users/pranesh/Devloper/Cloud%20Product/cloudinsight/mlflow-demo/mlruns/243163386359166693/models/m-bd6995bdead14492ad0dd400cfdbad8b/artifacts
+creation_timestamp: 1773155686324
+experiment_id: '243163386359166693'
+last_updated_timestamp: 1773155687814
+model_id: m-bd6995bdead14492ad0dd400cfdbad8b
+model_type: null
+name: model
+source_run_id: 0f69a8a0b81148cfa9c6439f3be5d998
+status: 2
+status_message: null

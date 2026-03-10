@@ -1,0 +1,14 @@
+artifact_uri: file:///Users/pranesh/Devloper/Cloud%20Product/cloudinsight/mlflow-demo/mlruns/243163386359166693/fa23ecb029554804a41c4ad612680362/artifacts
+end_time: 1773155686253
+entry_point_name: ''
+experiment_id: '243163386359166693'
+lifecycle_stage: active
+run_id: fa23ecb029554804a41c4ad612680362
+run_name: xgb_test30
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1773155684607
+status: 3
+tags: []
+user_id: pranesh

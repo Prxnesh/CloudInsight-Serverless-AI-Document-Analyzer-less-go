@@ -1,0 +1,14 @@
+artifact_uri: file:///Users/pranesh/Devloper/Cloud%20Product/cloudinsight/mlflow-demo/mlruns/205117722014394248/ad4ff2dc92394781b7db433b985c967d/artifacts
+end_time: 1773140518343
+entry_point_name: ''
+experiment_id: '205117722014394248'
+lifecycle_stage: active
+run_id: ad4ff2dc92394781b7db433b985c967d
+run_name: vaunted-koi-335
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1773140516826
+status: 3
+tags: []
+user_id: pranesh

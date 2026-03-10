@@ -1,0 +1,14 @@
+artifact_uri: file:///Users/pranesh/Devloper/Cloud%20Product/cloudinsight/mlflow-demo/mlruns/205117722014394248/7dd28e65f045416da405bda745d82c1b/artifacts
+end_time: 1773140541002
+entry_point_name: ''
+experiment_id: '205117722014394248'
+lifecycle_stage: active
+run_id: 7dd28e65f045416da405bda745d82c1b
+run_name: tasteful-yak-609
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1773140539500
+status: 3
+tags: []
+user_id: pranesh
