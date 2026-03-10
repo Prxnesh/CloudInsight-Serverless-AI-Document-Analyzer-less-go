@@ -1,66 +1,38 @@
-from fastapi import FastAPI, File, UploadFile
-from fastapi.middleware.cors import CORSMiddleware
-from PyPDF2 import PdfReader
-from textblob import TextBlob
-import io
-import re
-from collections import Counter
+from fastapi import FastAPI
+from fastapi.staticfiles import StaticFiles
+from fastapi.templating import Jinja2Templates
+from fastapi import Request
+from routers import analyze
 
-app = FastAPI()
 
-# Allow frontend access later
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+# Initialize FastAPI app
+app = FastAPI(
+    title="PDF AI Analyzer",
+    description="AI-powered PDF document analysis tool",
+    version="1.0.0"
 )
 
-def extract_text_from_pdf(file_bytes):
-    reader = PdfReader(io.BytesIO(file_bytes))
-    text = ""
-    for page in reader.pages:
-        text += page.extract_text() or ""
-    return text
+# Mount static files
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
-def summarize_text(text, max_sentences=3):
-    sentences = text.split(".")
-    return ".".join(sentences[:max_sentences]) + "."
+# Setup templates
+templates = Jinja2Templates(directory="templates")
 
-def extract_keywords(text, top_n=5):
-    words = re.findall(r'\b[a-zA-Z]{4,}\b', text.lower())
-    common_words = Counter(words).most_common(top_n)
-    return [word for word, count in common_words]
+# Include routers
+app.include_router(analyze.router, prefix="/api", tags=["analysis"])
 
-@app.post("/analyze")
-async def analyze_document(file: UploadFile = File(...)):
-    contents = await file.read()
 
-    if file.filename.endswith(".pdf"):
-        text = extract_text_from_pdf(contents)
-    else:
-        text = contents.decode("utf-8")
+@app.get("/")
+async def home(request: Request):
+    """Serve the homepage"""
+    return templates.TemplateResponse("index.html", {"request": request})
 
-    if not text.strip():
-        return {"error": "No readable text found."}
 
-    summary = summarize_text(text)
-    sentiment = TextBlob(text).sentiment.polarity
-
-    if sentiment > 0:
-        mood = "Positive"
-    elif sentiment < 0:
-        mood = "Negative"
-    else:
-        mood = "Neutral"
-
-    keywords = extract_keywords(text)
-
+@app.get("/api/info")
+async def api_info():
+    """Get API information"""
     return {
-        "filename": file.filename,
-        "summary": summary,
-        "sentiment_score": sentiment,
-        "sentiment_label": mood,
-        "keywords": keywords
+        "name": "PDF AI Analyzer",
+        "version": "1.0.0",
+        "description": "Upload PDF documents for AI-powered analysis"
     }
